@@ -9,179 +9,97 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
   :root {
-
     color-scheme: light;
-
-    --accent: #F06649;           /* QNu orange */
-
+    --accent: #F06649;
     --accent-tint: rgba(240,102,73,.12);
-
-    --bg: #f5f5f7;               /* Apple system grouped background */
-
+    --bg: #f5f5f7;
     --cell: #ffffff;
-
     --label: #1d1d1f;
-
     --secondary: #6e6e73;
-
     --tertiary: #aeaeb2;
-
     --separator: rgba(60,60,67,.18);
-
     --glass: rgba(245,245,247,.72);
-
     --logo-ink: #050404;
-
     --hero-glow: rgba(240,102,73,.18);
-
   }
- 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html, body { background: var(--bg); }
-
   body {
-
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-
     color: var(--label); -webkit-font-smoothing: antialiased; letter-spacing: -.01em;
-
   }
-
   a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-
   .page { max-width: 440px; margin: 0 auto; padding: 0 16px 120px; }
- 
+
   /* ---------- Top bar (frosted) ---------- */
-
   .topbar {
-
     position: sticky; top: 0; z-index: 20; margin: 0 -16px;
-
     padding: calc(18px + env(safe-area-inset-top)) 16px 18px;
-
     display: flex; align-items: center; justify-content: center;
-
     background: var(--glass); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
-
     border-bottom: .5px solid var(--separator);
-
   }
-
   .topbar svg { height: 22px; width: auto; }
- 
+
   /* ---------- Hero ---------- */
-
   .hero { text-align: center; padding: 44px 0 30px; position: relative; }
-
   .hero::before {
-
     content: ""; position: absolute; left: 50%; top: 10px; width: 280px; height: 220px; transform: translateX(-50%);
-
     background: radial-gradient(closest-side, var(--hero-glow), transparent); z-index: -1;
-
   }
-
   .avatar {
-
     width: 128px; height: 128px; border-radius: 50%; margin: 0 auto; object-fit: cover; display: block;
-
     box-shadow: 0 10px 30px rgba(0,0,0,.12);
-
   }
-
   h1 { font-family: "DM Sans", Inter, sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -.025em; margin-top: 18px; line-height: 1.1; }
-
   .subtitle { color: var(--secondary); font-size: 17px; margin-top: 6px; line-height: 1.35; }
-
   .subtitle b { font-family: "DM Sans", Inter, sans-serif; color: var(--label); font-weight: 600; }
- 
-  /* ---------- Action tiles (iOS Contacts) ---------- */
 
+  /* ---------- Action tiles ---------- */
   .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 28px; }
-
   .actions a {
-
     background: var(--cell); border-radius: 12px; padding: 10px 4px 8px;
-
     display: flex; flex-direction: column; align-items: center; gap: 4px;
-
     color: var(--accent); font-size: 11px; font-weight: 500; transition: transform .12s, opacity .12s;
-
   }
-
   .actions a:active { transform: scale(.96); opacity: .7; }
-
   .actions svg { width: 24px; height: 24px; }
- 
+
   /* ---------- Grouped inset lists ---------- */
-
   .group-title { font-family: "DM Sans", Inter, sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .02em; color: var(--secondary); padding: 0 16px 7px; }
-
   .group { background: var(--cell); border-radius: 12px; overflow: hidden; margin-bottom: 28px; }
-
   .cell { display: flex; align-items: center; gap: 12px; padding: 16px 16px; position: relative; min-height: 44px; }
-
   .cell + .cell::before { content: ""; position: absolute; top: 0; right: 0; left: 16px; border-top: .5px solid var(--separator); }
-
   .cell.icon + .cell.icon::before { left: 60px; }
-
-  .cell .badge {
-
-    flex: none; width: 32px; height: 32px; display: grid; place-items: center; color: var(--accent);
-
-  }
-
+  .cell .badge { flex: none; width: 32px; height: 32px; display: grid; place-items: center; color: var(--accent); }
   .cell .badge svg { width: 24px; height: 24px; }
-
   .cell .text { flex: 1; min-width: 0; }
-
   .cell .k { font-size: 13px; color: var(--secondary); }
-
   .cell .v { font-size: 17px; color: var(--label); margin-top: 1px; overflow-wrap: anywhere; line-height: 1.3; }
-
   .cell .v.link { color: var(--accent); }
-
   .chev { flex: none; width: 8px; height: 13px; color: var(--tertiary); }
-
   a.cell:active { background: var(--separator); }
- 
   .bio { padding: 14px 16px; font-size: 17px; line-height: 1.45; }
- 
- 
+
   /* ---------- Bottom bar (frosted) ---------- */
-
   .savebar {
-
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
-
     padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-
     background: var(--glass); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
-
     border-top: .5px solid var(--separator);
-
   }
-
   .savebar button {
-
     display: block; width: 100%; max-width: 408px; margin: 0 auto;
-
     background: var(--accent); color: #fff; border: 0; border-radius: 14px; padding: 15px;
-
     font: 600 17px/1 Inter, -apple-system, sans-serif; letter-spacing: -.01em;
-
     cursor: pointer; transition: transform .12s, opacity .12s;
-
   }
-
   .savebar button:active { transform: scale(.98); opacity: .85; }
 </style>
 </head>
 <body>
- 
+
 <div class="page">
 <!-- Frosted nav bar with QNu logo -->
 <header class="topbar">
@@ -193,15 +111,15 @@
 <path fill="var(--logo-ink)" d="M408.1,67.6V5.5h19.9v61.7c0,16.6,8.8,26.8,22.8,26.8c13.9,0,22.8-10.2,22.8-26.8V5.5h19.9v62.2c0,27.3-16.3,44.2-42.7,44.2C424.5,111.8,408.1,94.9,408.1,67.6"/>
 </svg>
 </header>
- 
-  <!-- Hero -->
+
+<!-- Hero -->
 <section class="hero">
 <img class="avatar" src="CEO.png" alt="Sunil Kumar Gupta">
 <h1>Sunil Kumar Gupta</h1>
 <p class="subtitle"><b>Co-Founder &amp; CEO</b><br>QuNu Labs Private Limited</p>
 </section>
- 
-  <!-- Action tiles -->
+
+<!-- Action tiles -->
 <nav class="actions" aria-label="Quick actions">
 <a href="sms:+919845355599">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.3 9.5 9.5 0 0 1-3.2-.6L3.5 21l1.7-4.6A8 8 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></svg>message</a>
@@ -212,14 +130,14 @@
 <a href="https://www.qnulabs.com" target="_blank" rel="noopener">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.6 3.8 5.8 3.8 9.5s-1.3 6.9-3.8 9.5c-2.5-2.6-3.8-5.8-3.8-9.5S9.5 5.1 12 2.5z"/></svg>website</a>
 </nav>
- 
-  <!-- About -->
+
+<!-- About -->
 <div class="group-title">About</div>
 <div class="group">
 <p class="bio">Building Global Trust Platform in the Quantum + AI Era.</p>
 </div>
- 
-  <!-- Contact -->
+
+<!-- Contact -->
 <div class="group-title">Contact</div>
 <div class="group">
 <a class="cell" href="tel:+919845355599"><div class="text"><div class="k">mobile</div><div class="v link">+91 98453 55599</div></div></a>
@@ -230,8 +148,8 @@
 <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5 6.5 6.5l-5 5"/></svg>
 </a>
 </div>
- 
-  <!-- Social -->
+
+<!-- Social -->
 <div class="group-title">Follow</div>
 <div class="group">
 <a class="cell icon" href="https://www.linkedin.com/in/sunil-gupta-1733754/" target="_blank" rel="noopener">
@@ -250,67 +168,68 @@
 <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5 6.5 6.5l-5 5"/></svg>
 </a>
 </div>
- 
+
 </div>
- 
+
 <div class="savebar"><button id="save">Add to Contacts</button></div>
- 
+
 <script>
-
   const CONTACT = {
-
     first: "Sunil", middle: "Kumar", last: "Gupta",
-
     title: "Co-Founder & CEO",
-
     org: "QuNu Labs Private Limited",
-
     phone: "+919845355599",
-
     email: "sunil@qnulabs.com",
-
     url: "https://www.qnulabs.com",
-
-    street: "Centenary Building, 2nd Floor, East Wing, MG Road", city: "Bengaluru", region: "Karnataka", zip: "560025", country: "India"
-
+    street: "Centenary Building, 2nd Floor, East Wing, MG Road",
+    city: "Bengaluru", region: "Karnataka", zip: "560025", country: "India"
   };
- 
-  document.getElementById("save").addEventListener("click", () => {
 
-    const vcf = [
-
-      "BEGIN:VCARD", "VERSION:3.0",
-
+  function buildVCF() {
+    return [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
       `N:${CONTACT.last};${CONTACT.first};${CONTACT.middle};;`,
-
       `FN:${CONTACT.first} ${CONTACT.middle} ${CONTACT.last}`,
-
       `ORG:${CONTACT.org}`,
-
       `TITLE:${CONTACT.title}`,
-
       `TEL;TYPE=CELL:${CONTACT.phone}`,
-
       `EMAIL;TYPE=WORK:${CONTACT.email}`,
-
       `URL:${CONTACT.url}`,
-
       `ADR;TYPE=WORK:;;${CONTACT.street};${CONTACT.city};${CONTACT.region};${CONTACT.zip};${CONTACT.country}`,
-
       "END:VCARD"
-
     ].join("\r\n");
+  }
 
-    const a = document.createElement("a");
+  document.getElementById("save").addEventListener("click", () => {
+    const vcf = buildVCF();
+    const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
 
-    a.href = URL.createObjectURL(new Blob([vcf], { type: "text/vcard" }));
+    const ua = navigator.userAgent || "";
+    const isIOS = /iP(hone|ad|od)/.test(ua);
+    const isAndroid = /Android/.test(ua);
 
-    a.download = `${CONTACT.first}-${CONTACT.last}.vcf`;
-
-    a.click();
-
-    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-
+    if (isIOS) {
+      // iOS Safari: navigate directly to the blob URL — triggers native "Add to Contacts" sheet
+      window.location.href = url;
+    } else if (isAndroid) {
+      // Android: use a hidden <a> with download attribute; Chrome prompts to open with Contacts
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Sunil-Kumar-Gupta.vcf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    } else {
+      // Desktop fallback: standard download
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Sunil-Kumar-Gupta.vcf";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    }
   });
 </script>
 </body>
