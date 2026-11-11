@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f5f7">
+
+<title>QNu Labs | Contact Directory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --accent: #F06649;
+    --background: #f5f5f7;
+    --card: #ffffff;
+    --text: #1d1d1f;
+    --secondary: #6e6e73;
+    --border: rgba(60,60,67,.14);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+
+.topbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(245,245,247,.85);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Main Container */
+
+.container {
+    width: min(100% - 32px, 560px);
+    margin: auto;
+    padding: 55px 0 45px;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(30px, 7vw, 40px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+}
+
+.description {
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 13px;
+}
+
+/* Contact Cards */
+
+.directory {
+    display: grid;
+    gap: 16px;
+}
+
+.contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.035);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(0,0,0,.08);
+}
+
+.initials {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(240,102,73,.12);
+    color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.designation {
+    color: var(--secondary);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.view-profile {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.arrow {
+    font-size: 19px;
+    margin-left: 3px;
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    padding: 40px 10px 20px;
+    color: var(--secondary);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.footer a {
+    color: var(--accent);
+}
+
+@media (max-width: 420px) {
+
+    .contact-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .initials {
+        width: 48px;
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .contact-name {
+        font-size: 15px;
+    }
+
+    .designation {
+        font-size: 12px;
+    }
+
+    .view-profile {
+        font-size: 11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- QNu Labs Header -->
+
+<header class="topbar">
+
+<svg class="logo" viewBox="0 0 500 117.3" aria-label="QNu Labs">
+
+<rect x="141.6" y="52.4" fill="#F06649" width="94.9" height="16.4"/>
+
+<polygon fill="#F06649" points="192.6,19.3 233.6,60.3 192.6,101.4 204.2,112.9 256.8,60.3 204.2,7.7"/>
+
+<path fill="#050404" d="M111.3,113.6L111.3,113.6c-10.5-0.9-19.5-3.2-27-7c-7.2,3.6-15.7,5.5-24.9,5.5c-31,0-53-22.5-53-54.2c0-31.8,22-54.2,53-54.2s53,22.5,53,54.2c0,14.8-4.8,27.6-13,37c4.2,1.4,8.7,2.2,13.8,2.7L111.3,113.6z M59.5,94.3c3.1,0,6.3-0.4,9.1-1.1c-4.9-6.8-8.2-14.8-9.7-24.6l16.9-3c1.3,7.3,4,13.5,7.9,18.3c5.7-6.3,9-15.4,9-26.1c0-21.6-13.2-36.6-33.3-36.6c-20.1,0-33.3,15-33.3,36.6C26.2,79.3,39.4,94.3,59.5,94.3z"/>
+
+<polygon fill="#050404" points="345.9,6.2 345.9,82.8 304.7,6.2 278.5,6.2 278.5,111.1 297.8,111.1 297.8,30.9 341.1,111.1 365.2,111.1 365.2,6.2"/>
+
+<path fill="#050404" d="M408.1,67.6V5.5h19.9v61.7c0,16.6,8.8,26.8,22.8,26.8c13.9,0,22.8-10.2,22.8-26.8V5.5h19.9v62.2c0,27.3-16.3,44.2-42.7,44.2C424.5,111.8,408.1,94.9,408.1,67.6"/>
+
+</svg>
+
+</header>
+
+<main class="container">
+
+<!-- Welcome Section -->
+
+<section class="hero">
+
+<p class="eyebrow">QNu Labs</p>
+
+<h1>Connect with Our Team</h1>
+
+<p class="description">
+Find the right contact at QNu Labs.<br>
+Select a profile below to view contact details.
+</p>
+
+</section>
+
+<!-- Contact Directory -->
+
+<section class="directory">
+
+<!-- CEO -->
+
+<a href="https://contacts.qnulabs.in/sg.html"
+   class="contact-card">
+
+<div class="initials">SG</div>
+
+<div class="contact-info">
+
+<div class="contact-name">
+Sunil Kumar Gupta
+</div>
+
+<div class="designation">
+Co-Founder &amp; CEO
+</div>
+
+</div>
+
+<div class="view-profile">
+View Profile <span class="arrow">›</span>
+</div>
+
+</a>
+
+
+<!-- CMO -->
+
+<a href="https://contacts.qnulabs.in/spc.html"
+   class="contact-card">
+
+<div class="initials">SPC</div>
+
+<div class="contact-info">
+
+<div class="contact-name">
+Sudiptaa Paul Choudhury
+</div>
+
+<div class="designation">
+Chief Marketing Officer
+</div>
+
+</div>
+
+<div class="view-profile">
+View Profile <span class="arrow">›</span>
+</div>
+
+</a>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<p>
+<a href="https://www.qnulabs.com" target="_blank" rel="noopener">
+www.qnulabs.com
+</a>
+</p>
+
+<p>© QNu Labs. All Rights Reserved.</p>
+
+</footer>
+
+</main>
+
+</body>
+</html>
